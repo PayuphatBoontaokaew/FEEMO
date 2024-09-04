@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap');
+
+
+/* ตั้งค่าพื้นฐานของหน้า */
+body {
+    font-family: 'Kanit', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+  /* หัวข้อหลัก */
+  h1 {
+    font-family: 'Kanit', sans-serif;
+    color: #003399;
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+  
+  /* คอนเทนเนอร์กล้อง */
+  .camera-container {
+    max-width: 800px;
+  }
+  
+  /* วิดีโอและภาพ */
+  .video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 อัตราส่วน */
+    background-color: #000;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  video, canvas, #photo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  #photo {
+    border: 2px solid #003399;
+  }
+  
+  /* ปรับแต่งสไลเดอร์ */
+  .controls .form-range {
+    width: 100%;
+  }
+  
+  /* ปุ่ม */
+  button.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  button.btn i {
+    font-size: 1.2rem;
+  }
+  
+  /* ปรับขนาดปุ่ม */
+  .btn-lg {
+    padding: 0.75rem 1.5rem;
+    font-size: 1.25rem;
+  }
+  
+  /* ปรับแต่ง Modal */
+  .modal-header {
+    background-color: #003399;
+    color: #fff;
+  }
+  
+  .modal-footer .btn-primary {
+    background-color: #003399;
+    border-color: #003399;
+  }
+  
+  .modal-footer .btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+  }
+  
+  /* เพิ่มเงาให้คอนเทนเนอร์กล้อง */
+  .camera-container {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* ปรับระยะห่าง */
+  .controls .row {
+    margin-bottom: 1.5rem;
+  }
+  

@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FEEMO | Capture</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="start.css"> <!-- ลิงก์ไปยังไฟล์ CSS ที่กำหนดเอง -->
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="Image/4.jpg" alt="" width="40" height="30" class="d-inline-block align-text-top">
+            FEEMO
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link" href="#">หน้าหลัก</a>
+              <a class="nav-link active" aria-current="page" href="#">เริ่มต้นใช้งาน</a>
+              <a class="nav-link" href="#">ความรู้</a>
+              <a class="nav-link" href="#">เกี่ยวกับเรา</a>
+            </div>
+          </div>
+        </div>
+    </nav>
+    <!-- Main Content -->
+    <div class="container text-center mt-5">
+      <h1 class="mb-10">เริ่มต้นใช้งาน</h1>
+      <div class="camera-container mx-auto p-4 bg-white rounded shadow">
+        <div class="video-wrapper position-relative">
+          <video id="video" autoplay></video>
+          <canvas id="canvas" class="d-none"></canvas>
+          <img id="photo" class="d-none img-fluid rounded" alt="Your photo">
+        </div>
+        <div class="controls mt-3">
+          <div class="row mb-3">
+            <div class="col-md-4">
+              <label for="zoomRange" class="form-label">ซูม</label>
+              <input type="range" class="form-range" id="zoomRange" min="1" max="3" step="0.1" value="1">
+            </div>
+            <div class="col-md-4">
+              <label for="brightnessRange" class="form-label">ความสว่าง</label>
+              <input type="range" class="form-range" id="brightnessRange" min="0.5" max="1.5" step="0.1" value="1">
+            </div>
+            <div class="col-md-4">
+              <label for="contrastRange" class="form-label">ความคมชัด</label>
+              <input type="range" class="form-range" id="contrastRange" min="0.5" max="1.5" step="0.1" value="1">
+            </div>
+          </div>
+          <div class="d-flex justify-content-center gap-3">
+            <button id="capture" class="btn btn-primary btn-lg">
+              <i class="bi bi-camera-fill me-2"></i>ถ่ายภาพ
+            </button>
+            <button id="retake" class="btn btn-warning btn-lg d-none">
+              <i class="bi bi-arrow-counterclockwise me-2"></i>ถ่ายใหม่
+            </button>
+            <button id="upload" class="btn btn-success btn-lg d-none">
+              <i class="bi bi-upload me-2"></i>อัปโหลดภาพ
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="confirmModalLabel">ยืนยันการถ่ายภาพ</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="ปิด"></button>
+          </div>
+          <div class="modal-body">
+            คุณต้องการเก็บภาพนี้หรือไม่?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ไม่เก็บ</button>
+            <button type="button" class="btn btn-primary" id="confirmSave">เก็บภาพ</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" 
+      crossorigin="anonymous"></script>
+    <script src="camera.js"></script> <!-- ลิงก์ไปยังไฟล์ JavaScript ที่กำหนดเอง -->
+  </body>
+</html>
