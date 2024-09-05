@@ -35,7 +35,7 @@
         <div class="row">
             <div class="col-lg-4 col-md-12">
                 <div class="card shadow-sm">
-                    <img id="photo" src="Image/7.png" class="card-img-top img-fluid" alt="Analyzed Image" style="margin-top: 15px;">
+                    <img id="photo" class="card-img-top img-fluid" alt="Analyzed Image" style="margin-top: 15px;">
                     <div class="card-body">
                         <h5 class="card-title text-center">ภาพวิเคราะห์ความเสี่ยง</h5>
                     </div>
@@ -65,12 +65,19 @@
             </div>
         </div>
         <div class="text-center mt-4">
-            <a class="btn btn-danger text-large">คุณมีความเสี่ยงเป็นโรคมะเร็งเม็ดเลือดขาว</a>
-            <a href="https://www.google.com/maps/search/%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5/@18.7896725,99.0216192,15z/data=!3m1!4b1?authuser=0&entry=ttu&g_ep=EgoyMDI0MDgyOC4wIKXMDSoASAFQAw%3D%3D" class="btn btn-success text-large" style="margin-left: 20px;">ค้นหาโรงพยาบาลที่ใกล้ที่สุด</a>
+          <a class="btn btn-danger text-large">คุณมีความเสี่ยงเป็นโรคมะเร็งเม็ดเลือดขาว</a>
+          <a href="https://www.google.com/maps/search/%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5/@18.7896725,99.0216192,15z/data=!3m1!4b1?authuser=0&entry=ttu&g_ep=EgoyMDI0MDgyOC4wIKXMDSoASAFQAw%3D%3D" class="btn btn-success text-large" style="margin-left: 20px;">ค้นหาโรงพยาบาลที่ใกล้ที่สุด</a>
+
         </div>
     </div>
 
     <script>
+        // Fetch and display the captured image
+        const imageData = localStorage.getItem('capturedImage');
+        if (imageData) {
+            document.getElementById('photo').src = imageData;
+        }
+
         // Chart.js configuration
         const riskData = {
             labels: ['Leukemia Risk', 'No Risk'],
