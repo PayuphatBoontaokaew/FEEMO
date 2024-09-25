@@ -29,12 +29,10 @@ navigator.mediaDevices.getUserMedia({ video: true })
   .catch((err) => {
     console.error("Error accessing camera:", err);
     alert("Could not access the camera.");
-    
 });
 
 
 captureButton.addEventListener('click', () => {
-
   const context = canvas.getContext('2d');
   canvas.width = video.videoWidth;
   canvas.height = video.videoHeight;
@@ -46,26 +44,21 @@ captureButton.addEventListener('click', () => {
   retakeButton.classList.remove('d-none');
   uploadButton.classList.remove('d-none');
   captureButton.classList.add('d-none');
-
 });
 
 
 retakeButton.addEventListener('click', () => {
-
   video.classList.remove('d-none');
   photo.classList.add('d-none');
   retakeButton.classList.add('d-none');
   uploadButton.classList.add('d-none');
   captureButton.classList.remove('d-none');
-
 });
 
 
 confirmSaveButton.addEventListener('click', () => {
-
   const dataURL = canvas.toDataURL('image/png');
   const storageRef = ref(storage, 'images/photo.png');
-
   uploadString(storageRef, dataURL, 'data_url').then((snapshot) => {
     console.log('Uploaded a base64 string!');
     alert('Image uploaded successfully!');
