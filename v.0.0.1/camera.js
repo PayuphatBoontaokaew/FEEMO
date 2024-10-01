@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const dataURL = canvas.toDataURL('image/png');
         localStorage.setItem('capturedImage', dataURL);
         // นำผู้ใช้ไปยังหน้า result.html
-        window.location.href = 'result.html';
+        window.location.href = 'v.0.0.1/result.html';
     });
 
     // ฟังก์ชันถ่ายใหม่
