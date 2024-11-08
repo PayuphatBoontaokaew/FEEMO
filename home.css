@@ -6,6 +6,11 @@ body, .navbar-brand, .nav-link, .feature-title, .feature-description,p {
     font-size: 20px;
 }
 
+.tiny-title{
+    font-family: 'Kanit', sans-serif ;
+    font-size: 20px;
+}
+
 /* Carousel Styling */
 #carouselExampleCaptions {
     max-width: 100%; /* Adjust as needed */
@@ -62,6 +67,7 @@ body, .navbar-brand, .nav-link, .feature-title, .feature-description,p {
 .feature-icon {
     font-size: 40px;
     margin-bottom: 15px;
+
 }
 
 .feature-title {
@@ -152,7 +158,7 @@ body, .navbar-brand, .nav-link, .feature-title, .feature-description,p {
 }
 
 .feature-icon {
-    color: #4A67F6;
+    color: #ffffff;
     font-size: 24px;
     margin-right: 15px;
     font-weight: 50px;
@@ -168,4 +174,43 @@ body, .navbar-brand, .nav-link, .feature-title, .feature-description,p {
 .feature-description1 {
     font-size: 12px;
     color: #555;
+}
+
+.section-title {
+    color: #6f42c1;
+    font-weight: bold;
+}
+.step-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+}
+.step-box {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #ffffff;
+    text-align: center;
+    transition: transform 0.3s;
+}
+.step-box:hover {
+    transform: scale(1.05);
+}
+.step-icon {
+    font-size: 40px;
+    color: #0008a7;
+    margin-bottom: 10px;
+    font-size: 40px;
+    background-color: #daf5ff; /* Pink background color */
+    border-radius: 50%; /* Makes the background circular */
+    width: 65px; /* Adjust as needed for circle size */
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px; /* Center the icon and add space below */
+}
+.step-text {
+    font-size: 16px;
+    color: #666;
 }
