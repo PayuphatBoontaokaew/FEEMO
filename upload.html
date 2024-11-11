@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <title>FEEMO | Upload</title>
+    <style>
+        body {
+            font-family: 'Kanit', sans-serif ;
+            font-size: 20px;
+        }
+        .container {
+            max-width: 700px;
+            margin-top: 40px;
+            text-align: center;
+        }
+        .back-button {
+            font-size: 24px;
+            color: #2b3b54;
+            background-color: #e0eafc;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        .upload-section {
+            background-color: #b7e5e5;
+            padding: 20px;
+            border-radius: 12px;
+            position: relative;
+        }
+        .upload-instructions {
+            color: #2b3b54;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        .upload-button {
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .status-section {
+            background-color: #d1e7f3;
+            padding: 10px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #2b3b54;
+        }
+        .status-icon {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+        .confirm-button {
+            background-color: #2b3b54;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            width: 100%;
+            margin-top: 20px;
+        }
+        .confirm-button:hover {
+            background-color: #243449;
+        }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="Image/4.jpg" alt="" width="40" height="30" class="d-inline-block align-text-top">
+            FEEMO
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link " href="#">หน้าหลัก</a>
+              <a class="nav-link active" aria-current="page" href="#">เริ่มต้นใช้งาน</a>
+              <a class="nav-link" href="#">ความรู้</a>
+              <a class="nav-link" href="#">เกี่ยวกับเรา</a>
+            </div>
+          </div>
+        </div>
+    </nav>
+    <div class="container">
+      <!-- Title -->
+      <h2>UPLOAD IMAGE</h2>
+
+      <!-- Upload Section -->
+      <div class="upload-section">
+        <div class="cloud-icon">
+          <img src="Image/upload.png" alt="Cloud Upload Icon" style="height: 150px;">
+        </div>
+        <div class="upload-instructions">สามารถ Drag & Drop ไฟล์รูปภาพได้ที่นี่ หรือ</div>
+        <button type="button" class="btn btn-light upload-button" onclick="document.getElementById('fileInput').click();">อัปโหลดไฟล์</button>
+        <input type="file" id="fileInput" style="display: none;" onchange="handleFileUpload(event)">
+      </div>
+
+      <!-- Status Section -->
+      <div class="status-section">
+        <div class="status-text">
+          <strong>Status:</strong> <span id="statusMessage">Waiting for file upload</span>
+        </div>
+      </div>
+
+      <!-- Uploaded File Info -->
+      <div id="fileInfo" class="uploaded-file mt-3 d-flex align-items-center" style="display: none;">
+        <div class="status-icon">
+          <img src="https://img.icons8.com/ios-glyphs/30/000000/image.png" alt="Image Icon">
+        </div>
+        <input type="text" id="fileName" class="form-control" readonly style="flex-grow: 1; margin-left: 10px;">
+        <button type="button" class="btn btn-link text-danger" style="font-size: 24px; text-decoration: none;" onclick="clearFile()">&times;</button>
+      </div>
+
+      <!-- Confirm Button -->
+      <button type="button" class="confirm-button" onclick="window.location.href='result.html?image=' + encodeURIComponent(document.getElementById('fileInput').files[0].name)">
+        ยืนยัน
+      </button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script>
+      function handleFileUpload(event) {
+        const file = event.target.files[0];
+        if (file) {
+          document.getElementById("fileInfo").style.display = "flex";
+          document.getElementById("fileName").value = file.name;
+          document.getElementById("statusMessage").textContent = "File uploaded successfully";
+        }
+      }
+
+      function clearFile() {
+        document.getElementById("fileInput").value = "";
+        document.getElementById("fileInfo").style.display = "none";
+        document.getElementById("statusMessage").textContent = "Waiting for file upload";
+      }
+    </script>
+  </body>
+</html>

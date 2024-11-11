@@ -49,12 +49,16 @@ h2 {
 }
 
 .card-body {
-    padding: 15px;
+    padding: 10px;
 }
 
 .chart-container {
-    padding: 45px;
+    position: relative;
+    height: 270px; /* Adjust the height to fit the white space */
+    width: 80%; /* Adjust width to better fill the container */
+    margin: auto; /* Center the chart in the available space */
 }
+
 
 .btn {
     font-size: 0.9rem;
@@ -91,3 +95,5 @@ h2 {
     font-size: 25px ; /* ปรับขนาดฟอนต์ตามที่ต้องการ */
     font-weight: 30px; /* ทำให้ตัวหนาขึ้น */
 }
+
+
